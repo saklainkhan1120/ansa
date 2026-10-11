@@ -1,0 +1,7 @@
+export * from "./programmes";
+export * from "./locations";
+export * from "./coaches";
+export * from "./champions";
+export * from "./faqs";
+export * from "./offers";
+export * from "./contact";
