@@ -60,6 +60,7 @@ export interface VenueLocation {
 export interface Coach {
   id: string;
   name: string;
+  photoPath?: string;
   designation: string;
   isLeadership: boolean;
   isLadyCoach: boolean;
@@ -124,4 +125,27 @@ export interface AcademyProfile {
     instagram: string;
     linkedin: string;
   };
+}
+
+export interface Review {
+  id: string;
+  authorName: string;
+  source: "Google Reviews (Trustindex Verified)" | "Parent Letter";
+  rating: number; // 5
+  swimmerContext?: string;
+  coachesMentioned?: string[];
+  content: string;
+  verificationStatus: VerificationStatus;
+}
+
+export interface Article {
+  id: string;
+  slug: string;
+  title: string;
+  author: string;
+  date: string;
+  summary: string;
+  imagePath: string;
+  readingTimeMinutes: number;
+  verificationStatus: VerificationStatus;
 }

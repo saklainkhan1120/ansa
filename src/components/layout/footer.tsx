@@ -8,7 +8,7 @@ import { ACADEMY_PROFILE } from "@/data/contact";
 
 export function Footer() {
   return (
-    <footer className="bg-slate-950 text-slate-300 text-sm border-t border-slate-800">
+    <footer className="bg-slate-950 text-slate-300 text-sm border-t border-slate-800 pb-20 lg:pb-0">
       {/* Upper Footer: Authority & Values */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-b border-slate-800/80">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

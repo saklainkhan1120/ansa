@@ -21,6 +21,7 @@ export const COACHES: Coach[] = [
   },
   {
     id: "abin-jose-tp",
+    photoPath: "/images/coaches/abin-jose.jpg",
     name: "Abin Jose TP",
     designation: "Head Coach",
     isLeadership: true,
@@ -38,6 +39,7 @@ export const COACHES: Coach[] = [
   },
   {
     id: "anantha-krishnan",
+    photoPath: "/images/coaches/anantha-krishnan.jpg",
     name: "Anantha Krishnan",
     designation: "Senior Swimming Coach",
     isLeadership: false,
@@ -50,6 +52,7 @@ export const COACHES: Coach[] = [
   },
   {
     id: "harshani-ds",
+    photoPath: "/images/coaches/harshani-ds.jpg",
     name: "Harshani D S",
     designation: "Certified Lady Swimming Coach",
     isLeadership: false,
@@ -74,6 +77,7 @@ export const COACHES: Coach[] = [
   },
   {
     id: "iresha-wijethunga",
+    photoPath: "/images/coaches/iresha-wijethunga.jpg",
     name: "Iresha Wijethunga",
     designation: "Certified Lady Swimming Coach & Aqua Therapist",
     isLeadership: false,
@@ -91,6 +95,7 @@ export const COACHES: Coach[] = [
   },
   {
     id: "fathima-amna",
+    photoPath: "/images/coaches/fathima-amna.jpg",
     name: "Fathima Amna",
     designation: "Certified Lady Swimming Coach",
     isLeadership: false,
@@ -115,6 +120,7 @@ export const COACHES: Coach[] = [
   },
   {
     id: "vineeth-ks",
+    photoPath: "/images/coaches/vineeth-ks.jpg",
     name: "Vineeth K S",
     designation: "Swimming & Dryland Coach",
     isLeadership: false,
@@ -151,6 +157,7 @@ export const COACHES: Coach[] = [
   },
   {
     id: "abhijith-r",
+    photoPath: "/images/coaches/abhijit-r.jpg",
     name: "Abhijith R (Abhijith Ramdas)",
     designation: "Swimming Coach",
     isLeadership: false,

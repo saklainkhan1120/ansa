@@ -5,3 +5,5 @@ export * from "./champions";
 export * from "./faqs";
 export * from "./offers";
 export * from "./contact";
+export * from "./reviews";
+export * from "./articles";
