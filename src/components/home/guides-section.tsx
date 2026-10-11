@@ -6,11 +6,11 @@ import { ARTICLES } from "@/data/articles";
 
 export function GuidesSection() {
   return (
-    <section className="py-20 bg-slate-50 border-t border-slate-200">
+    <section id="guides" className="py-20 bg-white border-b border-sky-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <Badge variant="teal">Educational Insights &amp; Advice</Badge>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0A2540] tracking-tight">
             Swimmer &amp; Parent Guidance
           </h2>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
@@ -22,7 +22,7 @@ export function GuidesSection() {
           {ARTICLES.map((art) => (
             <div
               key={art.id}
-              className="bg-white border border-slate-200/90 rounded-2xl overflow-hidden shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group"
+              className="bg-white border border-sky-100 rounded-3xl overflow-hidden shadow-xs hover:shadow-xl hover:border-teal-300 transition-all flex flex-col justify-between group"
             >
               <div>
                 <div className="relative w-full aspect-16/10 bg-slate-100 overflow-hidden">
@@ -45,7 +45,7 @@ export function GuidesSection() {
                     </span>
                   </div>
 
-                  <h3 className="text-base font-bold text-slate-900 group-hover:text-teal-700 transition-colors line-clamp-2">
+                  <h3 className="text-base font-bold text-[#0A2540] group-hover:text-sky-700 transition-colors line-clamp-2">
                     {art.title}
                   </h3>
 

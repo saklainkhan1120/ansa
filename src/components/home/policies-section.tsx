@@ -31,11 +31,11 @@ export function PoliciesSection() {
   ];
 
   return (
-    <section className="py-20 bg-slate-50 border-t border-slate-200">
+    <section id="policies" className="py-20 bg-white border-b border-sky-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
           <Badge variant="teal">Academy Operating Policies</Badge>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0A2540] tracking-tight">
             Parent Peace of Mind by Design
           </h2>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
@@ -49,14 +49,14 @@ export function PoliciesSection() {
             return (
               <div
                 key={idx}
-                className="bg-white p-6 rounded-2xl border border-slate-200/90 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between"
+                className="bg-[#F8FCFD] p-6 rounded-3xl border border-sky-100 shadow-xs hover:shadow-xl hover:border-teal-300 transition-all flex flex-col justify-between"
               >
                 <div className="space-y-3">
                   <div className="w-12 h-12 rounded-xl bg-teal-50 border border-teal-200/60 text-teal-700 flex items-center justify-center">
                     <Icon className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-slate-900">
+                    <h3 className="text-lg font-bold text-[#0A2540]">
                       {p.title}
                     </h3>
                     <p className="text-xs font-semibold text-teal-700 mt-0.5">

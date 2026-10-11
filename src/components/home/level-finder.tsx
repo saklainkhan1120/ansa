@@ -124,11 +124,11 @@ export function LevelFinder({ onSelectProgram }: LevelFinderProps) {
   };
 
   return (
-    <section className="py-20 bg-white border-t border-slate-200">
+    <section id="level-finder" className="py-20 bg-[#EFFAFF] border-y border-sky-100">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
           <Badge variant="teal">Interactive Programme Selector</Badge>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0A2540] tracking-tight">
             Find the Right Starting Programme
           </h2>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
@@ -136,7 +136,7 @@ export function LevelFinder({ onSelectProgram }: LevelFinderProps) {
           </p>
         </div>
 
-        <div className="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-sm space-y-8">
+        <div className="bg-white border border-sky-100 rounded-3xl p-6 sm:p-10 shadow-xl shadow-sky-950/5 space-y-8">
           {/* STEP 1: SELECT AGE GROUP */}
           <div>
             <div className="flex items-center justify-between mb-4">

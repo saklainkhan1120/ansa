@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { AwardIcon, SwimIcon, ShieldCheckIcon, ClockIcon, WhatsAppIcon, MapPinIcon } from "@/components/ui/icons";
+import Image from "next/image";
+import { AwardIcon, SwimIcon, MapPinIcon, CheckCircleIcon } from "@/components/ui/icons";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 
 interface HeroSectionProps {
   onOpenAssessment: () => void;
@@ -18,133 +18,106 @@ export function HeroSection({ onOpenAssessment }: HeroSectionProps) {
   };
 
   return (
-    <section className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden py-16 lg:py-24">
-      {/* Decorative Aquatic Radial Glows */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
+    <section className="relative bg-gradient-to-b from-[#EFFAFF] via-[#F4FBFE] to-white text-[#0A2540] overflow-hidden py-14 lg:py-20 border-b border-sky-100">
+      {/* Subtle Aquatic Ambient Glows */}
+      <div className="absolute top-0 right-10 w-96 h-96 bg-sky-200/40 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-80 h-80 bg-teal-200/30 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Column: Heading, Proof, CTAs */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          
+          {/* Left Column: Heading, Value Prop, CTAs */}
           <div className="lg:col-span-7 space-y-6 text-left">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-500/10 border border-teal-400/30 text-teal-300 text-xs font-semibold tracking-wide uppercase">
-              <AwardIcon className="w-4 h-4 text-teal-400 shrink-0" />
-              <span>Olympian-Led Swimming Academy · Dubai &amp; Abu Dhabi</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-xs font-bold tracking-wide uppercase shadow-xs">
+              <AwardIcon className="w-4 h-4 text-teal-600 shrink-0" />
+              <span>Olympic-Mentored Swimming Academy · Dubai &amp; Abu Dhabi</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
-              From First Splashes <br className="hidden sm:inline" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 via-sky-300 to-teal-200">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0A2540] leading-[1.12]">
+              From First Splashes <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-teal-600 to-cyan-600">
                 to Olympic Podiums.
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
-              Mentored by Dronacharya Awardee &amp; 4-time Olympic Coach <strong>Pradeep Kumar Sreedharan</strong>. Scientific, safe, and structured swimming pathways across <strong>9 verified temperature-controlled pool facilities</strong> in Dubai and Abu Dhabi.
+            <p className="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-2xl font-normal">
+              Mentored by 4-time Olympic Coach &amp; Dronacharya Awardee Pradeep Kumar. Structured swimming pathways from water-safety foundations to international competitive squads across 9 premium pool facilities in Dubai and Abu Dhabi.
             </p>
 
-            {/* Verified Operational Facts */}
-            <div className="flex flex-wrap gap-2.5 pt-1">
-              <Badge variant="verified">9 Temperature-Controlled Pools</Badge>
-              <Badge variant="verified">Strict Max 1:6 Ratio in Aqua Bubble</Badge>
-              <Badge variant="verified">Certified Lady Coaches at All Centres</Badge>
-              <Badge variant="verified">100% CPR &amp; Lifeguard Certified</Badge>
-            </div>
-
             {/* Conversion CTA Group */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-3">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
               <Button
                 variant="primary"
                 size="lg"
                 onClick={onOpenAssessment}
-                className="shadow-lg shadow-teal-950/40"
+                className="shadow-lg shadow-teal-600/20 text-base py-3.5 px-6 font-bold flex items-center justify-center gap-2"
               >
-                Book Swimming Assessment →
+                <SwimIcon className="w-5 h-5" />
+                Book Swimming Assessment
               </Button>
 
-              <button
-                type="button"
+              <Button
+                variant="outline"
+                size="lg"
                 onClick={scrollToVenues}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-lg border border-slate-700 bg-slate-900/80 hover:bg-slate-800 text-slate-200 font-semibold text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-400"
+                className="bg-white hover:bg-sky-50 text-sky-900 border-2 border-sky-200 hover:border-sky-300 text-base py-3.5 px-6 font-semibold flex items-center justify-center gap-2 shadow-xs"
               >
-                <MapPinIcon className="w-4 h-4 text-teal-400" />
-                <span>Explore 9 UAE Pools</span>
-              </button>
-
-              <a
-                href="https://wa.me/971562444207?text=Hi%20ANSA%2C%20I%20would%20like%20to%20enquire%20about%20swimming%20lessons%20and%20assessment%20timings."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-lg bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-sm shadow-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
-                aria-label="Direct Admissions WhatsApp chat"
-              >
-                <WhatsAppIcon className="w-4 h-4 shrink-0" />
-                <span>Admissions WhatsApp</span>
-              </a>
+                <MapPinIcon className="w-5 h-5 text-sky-600" />
+                Explore 9 Pool Locations
+              </Button>
             </div>
 
-            <p className="text-xs text-slate-400 flex items-center gap-2 pt-1">
-              <ClockIcon className="w-3.5 h-3.5 text-teal-400 shrink-0" />
-              <span>Training Tuesday to Sunday · Mondays weekly rest day · All 12 months year-round</span>
-            </p>
+            {/* Verified Trust Pillars */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t border-sky-100 text-xs sm:text-sm text-slate-600">
+              <div className="flex items-center gap-2 font-medium">
+                <CheckCircleIcon className="w-4 h-4 text-teal-600 shrink-0" />
+                <span>4-Time Olympic Coach</span>
+              </div>
+              <div className="flex items-center gap-2 font-medium">
+                <CheckCircleIcon className="w-4 h-4 text-sky-600 shrink-0" />
+                <span>9 Temperature-Controlled Pools</span>
+              </div>
+              <div className="flex items-center gap-2 font-medium">
+                <CheckCircleIcon className="w-4 h-4 text-teal-600 shrink-0" />
+                <span>ASCA Certified Coaches</span>
+              </div>
+            </div>
           </div>
 
-          {/* Right Column: Head Coach Heritage Card */}
-          <div className="lg:col-span-5">
-            <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl relative">
-              <div className="flex items-center justify-between pb-6 border-b border-slate-800">
+          {/* Right Column: Authentic Swimming Photography Showcase */}
+          <div className="lg:col-span-5 relative">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-sky-100 aspect-[4/3] sm:aspect-[16/11] lg:aspect-[4/3]">
+              <Image
+                src="/images/hero/hero-banner.jpg"
+                alt="Swimmer in crystal blue swimming pool at Aqua Nation Sports Academy UAE"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                className="object-cover"
+              />
+              
+              {/* Aquatic overlay tint for premium depth */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A2540]/40 via-transparent to-transparent" />
+
+              {/* Floating Badge: Olympic Mentorship */}
+              <div className="absolute bottom-4 left-4 right-4 sm:right-auto bg-white/95 backdrop-blur-md rounded-2xl p-3.5 shadow-xl border border-sky-100 flex items-center gap-3">
+                <div className="w-11 h-11 rounded-xl bg-teal-50 border border-teal-200 text-teal-600 flex items-center justify-center shrink-0">
+                  <AwardIcon className="w-6 h-6" />
+                </div>
                 <div>
-                  <span className="text-[11px] font-bold text-teal-400 uppercase tracking-wider block">
-                    Consulting CEO &amp; Head Coach
-                  </span>
-                  <h3 className="text-xl font-bold text-white mt-0.5">
-                    Pradeep Kumar Sreedharan
-                  </h3>
-                </div>
-                <div className="px-3 py-1 bg-amber-500/10 border border-amber-500/30 rounded-lg text-amber-300 text-xs font-bold">
-                  Dronacharya Award
+                  <p className="text-xs font-bold text-slate-900 leading-tight">Dronacharya Mentorship</p>
+                  <p className="text-[11px] text-slate-500 font-medium">Head Coach Pradeep Kumar (4x Olympic Coach)</p>
                 </div>
               </div>
 
-              <div className="py-6 space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-teal-500/10 text-teal-400 flex items-center justify-center shrink-0 mt-0.5">
-                    <AwardIcon className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-white">4-Time Olympic Coach</p>
-                    <p className="text-xs text-slate-400">National Swimming Coach of India with 35+ years shaping world-class athletes.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-teal-500/10 text-teal-400 flex items-center justify-center shrink-0 mt-0.5">
-                    <SwimIcon className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-white">Mentored Multiple Olympians</p>
-                    <p className="text-xs text-slate-400">Coached 2-time Olympian Sajan Prakash, Nisha Millet, and Asian Games medalists.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-teal-500/10 text-teal-400 flex items-center justify-center shrink-0 mt-0.5">
-                    <ShieldCheckIcon className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-white">DIAC Award Recognized</p>
-                    <p className="text-xs text-slate-400">Honoured by Dubai International Academic City for contributions to UAE sports development.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
-                <span>9 UAE Pool Facilities</span>
-                <span>15+ Certified Coaches</span>
-                <span>12 Months Year-Round</span>
+              {/* Top-Right Pill: Active Facilities */}
+              <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md rounded-full px-3 py-1 shadow-md border border-sky-100 flex items-center gap-1.5 text-xs font-bold text-sky-900">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span>9 Campuses Active</span>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>

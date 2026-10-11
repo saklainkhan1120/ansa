@@ -5,11 +5,11 @@ import { REVIEWS } from "@/data/reviews";
 
 export function ReviewsSection() {
   return (
-    <section className="py-20 bg-white border-t border-slate-200">
+    <section id="reviews" className="py-20 bg-[#EFFAFF] border-y border-sky-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <Badge variant="verified">100% Authentic Google &amp; Parent Reviews</Badge>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0A2540] tracking-tight">
             Trusted by Parents Across the UAE
           </h2>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
@@ -21,7 +21,7 @@ export function ReviewsSection() {
           {REVIEWS.map((review) => (
             <div
               key={review.id}
-              className="bg-slate-50 border border-slate-200/90 rounded-2xl p-6 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between"
+              className="bg-white border border-sky-100 rounded-3xl p-6 sm:p-7 shadow-xs hover:shadow-xl hover:border-teal-300 transition-all flex flex-col justify-between"
             >
               <div className="space-y-4">
                 {/* Rating & Source Badge */}
@@ -43,7 +43,7 @@ export function ReviewsSection() {
 
               <div className="pt-4 mt-4 border-t border-slate-200 flex items-center justify-between text-xs">
                 <div>
-                  <p className="font-bold text-slate-900">{review.authorName}</p>
+                  <p className="font-bold text-[#0A2540]">{review.authorName}</p>
                   <p className="text-[11px] text-slate-500">{review.swimmerContext}</p>
                 </div>
                 {review.coachesMentioned && review.coachesMentioned.length > 0 && (
