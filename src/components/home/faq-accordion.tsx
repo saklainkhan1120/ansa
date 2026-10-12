@@ -14,6 +14,7 @@ export function FAQAccordion() {
     { key: "admissions", label: "Admissions & Venues" },
     { key: "programmes", label: "Programmes & Ratios" },
     { key: "safety", label: "Safety & Coaches" },
+    { key: "schedules", label: "Schedules & Timings" },
     { key: "fees_policies", label: "Fees & Policies" },
   ];
 

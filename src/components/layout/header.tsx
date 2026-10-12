@@ -219,10 +219,12 @@ export function Header() {
       />
 
       {/* Primary Assessment / Enquiry Modal */}
-      <AssessmentModal
-        isOpen={assessmentModalOpen}
-        onClose={() => setAssessmentModalOpen(false)}
-      />
+      {assessmentModalOpen && (
+        <AssessmentModal
+          isOpen={assessmentModalOpen}
+          onClose={() => setAssessmentModalOpen(false)}
+        />
+      )}
     </>
   );
 }

@@ -19,11 +19,16 @@ export function AssessmentModal({
   defaultProgramId = "",
   defaultLocationId = "",
 }: AssessmentModalProps) {
+  const matchedLoc = ACTIVE_LOCATIONS.find(
+    (l) => l.name === defaultLocationId || l.displayName === defaultLocationId || l.id === defaultLocationId
+  );
+  const initialLocation = matchedLoc ? matchedLoc.name : defaultLocationId;
+
   const [parentName, setParentName] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
   const [email, setEmail] = useState("");
   const [swimmerAge, setSwimmerAge] = useState("");
-  const [selectedLocation, setSelectedLocation] = useState(defaultLocationId);
+  const [selectedLocation, setSelectedLocation] = useState(initialLocation);
   const [selectedProgram, setSelectedProgram] = useState(defaultProgramId);
   const [isSubmitted, setIsSubmitted] = useState(false);
 

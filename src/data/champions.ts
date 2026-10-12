@@ -58,7 +58,7 @@ export const CHAMPIONS: Champion[] = [
     title: "National Swimmer",
     honours: ["State & National Level Competitor"],
     gamesRepresented: ["National Level Meets"],
-    photoPath: "/images/champions/sajan-prakash.jpg", // fallback
+    photoPath: "/images/champions/naythan-anthony-rajesh.jpg",
     verificationStatus: "verified_official"
   },
   {
@@ -67,7 +67,7 @@ export const CHAMPIONS: Champion[] = [
     title: "International Medallist",
     honours: ["International Open Medallist & Podium Finisher"],
     gamesRepresented: ["International Aquatic Invitationals"],
-    photoPath: "/images/champions/sanjana-prabhugaonkar.jpg", // fallback
+    photoPath: "/images/champions/kaadambaree-mahesh.jpg",
     verificationStatus: "verified_official"
   },
   {
@@ -76,7 +76,16 @@ export const CHAMPIONS: Champion[] = [
     title: "National Medallist",
     honours: ["National Age-Group Medallist"],
     gamesRepresented: ["National Championships"],
-    photoPath: "/images/champions/vedaant-madhavan.jpg", // fallback
+    photoPath: "/images/champions/kritharth-pandya.jpg",
+    verificationStatus: "verified_official"
+  },
+  {
+    id: "jiya-nirav-gandhi",
+    name: "Jiya Nirav Gandhi",
+    title: "International Medallist",
+    honours: ["International Open Age-Group Podium Finisher"],
+    gamesRepresented: ["International Aquatic Invitationals"],
+    photoPath: "/images/champions/jiya-nirav-gandhi.jpg",
     verificationStatus: "verified_official"
   },
   {
@@ -85,7 +94,7 @@ export const CHAMPIONS: Champion[] = [
     title: "International Medallist",
     honours: ["International Age-Group Medallist"],
     gamesRepresented: ["International Invitational Meets"],
-    photoPath: "/images/champions/tanish-george-mathew.jpg", // fallback
+    photoPath: "/images/champions/tanish-george-mathew.jpg",
     verificationStatus: "verified_official"
   }
 ];

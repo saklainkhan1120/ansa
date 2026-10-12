@@ -12,15 +12,15 @@ interface VenueDiscoveryProps {
 }
 
 const VENUE_IMAGES: Record<string, string> = {
+  "sisd-al-jaddaf": "/images/hero/hero-banner.jpg",
   "al-wasl-club": "/images/facilities/al-wasl-pool.jpg",
-  "brighton-college-abu-dhabi": "/images/facilities/all-ages-pool.jpeg",
-  "cranleigh-abu-dhabi": "/images/hero/hero-banner.jpg",
-  "al-mizhar-american-academy": "/images/facilities/al-wasl-pool.jpg",
-  "collegiate-international-school": "/images/hero/training-session.jpeg",
-  "dubai-british-school-jumeirah-park": "/images/facilities/all-ages-pool.jpeg",
-  "uptown-international-school": "/images/facilities/al-wasl-pool.jpg",
-  "asfaa-academy-al-qusais": "/images/hero/training-session.jpeg",
-  "delta-english-school": "/images/facilities/all-ages-pool.jpeg",
+  "dubai-club-al-qusais": "/images/facilities/all-ages-pool.jpeg",
+  "new-academy-mankhool": "/images/facilities/al-wasl-pool.jpg",
+  "egyptian-club-oud-metha": "/images/facilities/all-ages-pool.jpeg",
+  "al-nasr-club-oud-metha": "/images/facilities/al-wasl-pool.jpg",
+  "ambassador-al-quoz": "/images/facilities/all-ages-pool.jpeg",
+  "bright-riders-mbz-city": "/images/hero/training-session.jpeg",
+  "giis-bani-yas": "/images/facilities/all-ages-pool.jpeg",
 };
 
 export function VenueDiscovery({ onOpenAssessmentForLocation }: VenueDiscoveryProps) {
@@ -142,7 +142,7 @@ export function VenueDiscovery({ onOpenAssessmentForLocation }: VenueDiscoveryPr
                     <Button
                       variant="primary"
                       size="sm"
-                      onClick={() => onOpenAssessmentForLocation(venue.displayName)}
+                      onClick={() => onOpenAssessmentForLocation(venue.name)}
                       className="w-full justify-center text-xs font-bold py-2.5 rounded-xl"
                     >
                       <SwimIcon className="w-4 h-4" />

@@ -3,6 +3,7 @@ import { Coach } from "@/types/content";
 export const COACHES: Coach[] = [
   {
     id: "pradeep-kumar",
+    photoPath: "/images/coaching/pradeep-dronacharya.png",
     name: "Pradeep Kumar Sreedharan",
     designation: "Consulting CEO & Head Coach",
     isLeadership: true,

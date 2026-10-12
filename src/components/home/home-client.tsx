@@ -73,12 +73,15 @@ export function HomeClient() {
       <StickyLeadBar onOpenAssessment={() => handleOpenAssessment()} />
 
       {/* Central Assessment & Enquiry Modal */}
-      <AssessmentModal
-        isOpen={assessmentModalOpen}
-        onClose={handleCloseAssessment}
-        defaultProgramId={defaultProgram}
-        defaultLocationId={defaultLocation}
-      />
+      {assessmentModalOpen && (
+        <AssessmentModal
+          key={`${defaultProgram || ""}-${defaultLocation || ""}`}
+          isOpen={assessmentModalOpen}
+          onClose={handleCloseAssessment}
+          defaultProgramId={defaultProgram}
+          defaultLocationId={defaultLocation}
+        />
+      )}
     </div>
   );
 }
