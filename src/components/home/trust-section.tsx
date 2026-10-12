@@ -3,33 +3,33 @@ import { AwardIcon, ShieldCheckIcon, SwimIcon, StarIcon, CheckCircleIcon } from 
 
 export function TrustSection() {
   const credentials = [
-    { title: "Dronacharya Award", subtitle: "Olympic Coaching Honour", icon: AwardIcon, color: "text-amber-600 bg-amber-50 border-amber-200" },
-    { title: "4x Olympic Coach", subtitle: "Pradeep Kumar Mentorship", icon: SwimIcon, color: "text-sky-600 bg-sky-50 border-sky-200" },
-    { title: "DIAC Sports Award", subtitle: "Dubai Sports Development", icon: StarIcon, color: "text-teal-600 bg-teal-50 border-teal-200" },
-    { title: "ASCA & WA Certified", subtitle: "Levels 1-5 Biomechanics", icon: ShieldCheckIcon, color: "text-blue-600 bg-blue-50 border-blue-200" },
-    { title: "Dubai Sports Council", subtitle: "Licensed UAE Academy", icon: CheckCircleIcon, color: "text-emerald-600 bg-emerald-50 border-emerald-200" },
-    { title: "100% Lifeguards", subtitle: "Certified Safety On Deck", icon: ShieldCheckIcon, color: "text-teal-600 bg-teal-50 border-teal-200" },
+    { title: "Dronacharya Awardee", subtitle: "National Coaching Honour", icon: AwardIcon, iconColor: "text-amber-600" },
+    { title: "4-Time Olympic Coach", subtitle: "Pradeep Kumar Mentorship", icon: SwimIcon, iconColor: "text-sky-600" },
+    { title: "DIAC Sports Award", subtitle: "Dubai Sports Excellence", icon: StarIcon, iconColor: "text-teal-600" },
+    { title: "ASCA & WA Certified", subtitle: "Levels 1–5 Biomechanics", icon: ShieldCheckIcon, iconColor: "text-cyan-700" },
+    { title: "Dubai Sports Council", subtitle: "Licensed UAE Academy", icon: CheckCircleIcon, iconColor: "text-emerald-600" },
+    { title: "100% Certified Safety", subtitle: "Lifeguards on Every Deck", icon: ShieldCheckIcon, iconColor: "text-teal-600" },
   ];
 
   return (
-    <section className="bg-white border-y border-sky-100 py-6 sm:py-8">
+    <section className="bg-white border-b border-sky-100/80 py-6 sm:py-7">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 divide-y md:divide-y-0 md:divide-x divide-sky-100/80">
           {credentials.map((cred, idx) => {
             const IconComponent = cred.icon;
             return (
               <div
                 key={idx}
-                className="flex items-center gap-3 p-3 rounded-2xl bg-slate-50/70 border border-slate-100 hover:border-sky-200 hover:bg-sky-50/40 transition-colors"
+                className="flex items-center gap-3 px-3 py-3 sm:py-2 first:pl-0 last:pr-0"
               >
-                <div className={"w-9 h-9 rounded-xl border shrink-0 flex items-center justify-center " + cred.color}>
-                  <IconComponent className="w-4 h-4" />
+                <div className="shrink-0 p-1.5 rounded-lg bg-sky-50/80 text-sky-700">
+                  <IconComponent className={`w-4 h-4 ${cred.iconColor}`} />
                 </div>
-                <div className="text-left min-w-0">
-                  <span className="text-[#0A2540] block font-bold text-xs sm:text-sm leading-tight truncate">
+                <div className="min-w-0">
+                  <span className="text-[#0A2540] block font-bold text-xs sm:text-sm tracking-tight leading-tight truncate">
                     {cred.title}
                   </span>
-                  <span className="text-slate-500 text-[11px] block leading-tight truncate font-medium">
+                  <span className="text-slate-500 text-[11px] block leading-tight truncate font-normal mt-0.5">
                     {cred.subtitle}
                   </span>
                 </div>

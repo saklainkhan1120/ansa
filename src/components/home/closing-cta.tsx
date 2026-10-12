@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import { WhatsAppIcon, SwimIcon, ClockIcon } from "@/components/ui/icons";
+import Image from "next/image";
+import { WhatsAppIcon, SwimIcon, ClockIcon, CheckCircleIcon } from "@/components/ui/icons";
 
 interface ClosingCTAProps {
   onOpenAssessment: () => void;
@@ -9,76 +10,113 @@ interface ClosingCTAProps {
 
 export function ClosingCTA({ onOpenAssessment }: ClosingCTAProps) {
   return (
-    <section className="py-16 sm:py-24 bg-white relative overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative bg-gradient-to-br from-sky-600 via-teal-600 to-cyan-700 text-white rounded-3xl p-8 sm:p-12 lg:p-16 shadow-2xl overflow-hidden text-center space-y-6">
-          
-          {/* Subtle Ambient Aquatic Glows */}
-          <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -left-20 -top-20 w-80 h-80 bg-cyan-300/20 rounded-full blur-3xl pointer-events-none" />
+    <section className="relative w-full py-24 sm:py-32 overflow-hidden bg-[#0A2540] text-white">
+      {/* 1. Full-Bleed Authentic Aquatic Photography Background */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/facilities/all-ages-pool.jpeg"
+          alt="Aqua Nation Sports Academy swimming pool facility"
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+        />
 
-          <div className="relative z-10 space-y-4 max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/30 text-white text-xs font-bold tracking-wide uppercase">
-              <SwimIcon className="w-4 h-4" />
-              <span>Begin Your Swimmer&apos;s Journey Today</span>
-            </div>
+        {/* 2. Layered Aquatic Atmospheric Shimmer & Pool Blue Gradient */}
+        <div 
+          className="absolute inset-0 bg-gradient-to-r from-[#0A2540]/95 via-[#0A2540]/85 to-[#0284C7]/60 pointer-events-none" 
+          aria-hidden="true"
+        />
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
-              Ready to Step Onto the Pool Deck?
-            </h2>
+        {/* 3. Ambient Caustic Lighting Reflection */}
+        <div 
+          className="absolute inset-0 pointer-events-none opacity-40 mix-blend-screen animate-caustic"
+          style={{
+            backgroundImage: `radial-gradient(circle at 60% 40%, rgba(45, 212, 191, 0.45) 0%, transparent 60%)`,
+          }}
+          aria-hidden="true"
+        />
+      </div>
 
-            <p className="text-sky-100 text-sm sm:text-base lg:text-lg leading-relaxed font-normal">
-              Book an individual swimming assessment at your nearest Dubai or Abu Dhabi pool centre. Our certified coaches will evaluate your swimmer&apos;s comfort, recommend the ideal class ratio, and answer all your questions.
-            </p>
-          </div>
-
-          {/* 3 Step Pathway Summary */}
-          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-3 gap-3.5 max-w-3xl mx-auto text-xs text-white pt-2 text-left">
-            <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20">
-              <span className="text-cyan-200 font-bold block mb-1 uppercase tracking-wider text-[11px]">Step 1</span>
-              <strong className="block text-sm font-bold text-white mb-0.5">Select Nearest Campus</strong>
-              <span className="text-sky-100">Choose from our 9 pool facilities in Dubai or Abu Dhabi.</span>
-            </div>
-            <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20">
-              <span className="text-cyan-200 font-bold block mb-1 uppercase tracking-wider text-[11px]">Step 2</span>
-              <strong className="block text-sm font-bold text-white mb-0.5">In-Water Evaluation</strong>
-              <span className="text-sky-100">Certified coaches assess water confidence &amp; strokes.</span>
-            </div>
-            <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20">
-              <span className="text-cyan-200 font-bold block mb-1 uppercase tracking-wider text-[11px]">Step 3</span>
-              <strong className="block text-sm font-bold text-white mb-0.5">Confirm Schedule</strong>
-              <span className="text-sky-100">Choose convenient slots on our Tue–Sun timetable.</span>
-            </div>
-          </div>
-
-          {/* Action Button Group */}
-          <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <button
-              type="button"
-              onClick={onOpenAssessment}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-teal-800 hover:bg-sky-50 font-extrabold rounded-2xl text-base shadow-lg hover:shadow-xl transition-all cursor-pointer"
-            >
-              <SwimIcon className="w-5 h-5 text-teal-600" />
-              Book Swimming Assessment
-            </button>
-
-            <a
-              href="https://wa.me/971562444207?text=Hi%20ANSA%20team%2C%20I%20would%20like%20to%20book%20a%20swimming%20assessment."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#25D366] hover:bg-[#20ba59] text-white font-extrabold rounded-2xl text-base shadow-lg hover:shadow-xl transition-all"
-            >
-              <WhatsAppIcon className="w-5 h-5" />
-              Admissions WhatsApp (+971 56 244 4207)
-            </a>
-          </div>
-
-          <div className="relative z-10 flex items-center justify-center gap-2 text-xs text-sky-100 pt-2">
-            <ClockIcon className="w-4 h-4 text-cyan-200" />
-            <span>Training 12 months year-round across Dubai &amp; Abu Dhabi</span>
-          </div>
-
+      {/* Content Container */}
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+        
+        {/* Overline Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/30 text-white text-xs font-bold tracking-widest uppercase">
+          <SwimIcon className="w-4 h-4 text-teal-300" />
+          <span>Begin Your Swimmer&apos;s Journey</span>
         </div>
+
+        {/* Headline */}
+        <div className="space-y-4 max-w-3xl mx-auto">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
+            Ready to Step Onto the Pool Deck?
+          </h2>
+
+          <p className="text-sky-100 text-sm sm:text-base lg:text-lg leading-relaxed font-normal">
+            Book an individual swimming evaluation at your nearest Dubai or Abu Dhabi pool centre. Our coaches assess water comfort, determine the ideal coach ratio, and establish clear milestones.
+          </p>
+        </div>
+
+        {/* 3 Step Transparent Pathway Ribbon */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto text-left pt-2">
+          <div className="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20">
+            <span className="text-teal-300 font-bold block mb-1 uppercase tracking-wider text-[11px]">Step 01</span>
+            <strong className="block text-sm font-bold text-white mb-1">Select Nearest Pool</strong>
+            <span className="text-xs text-sky-100/90 leading-relaxed block">
+              Choose from 9 facilities across Dubai &amp; Abu Dhabi.
+            </span>
+          </div>
+          <div className="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20">
+            <span className="text-teal-300 font-bold block mb-1 uppercase tracking-wider text-[11px]">Step 02</span>
+            <strong className="block text-sm font-bold text-white mb-1">In-Water Assessment</strong>
+            <span className="text-xs text-sky-100/90 leading-relaxed block">
+              Certified coaches evaluate breath control &amp; strokes.
+            </span>
+          </div>
+          <div className="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20">
+            <span className="text-teal-300 font-bold block mb-1 uppercase tracking-wider text-[11px]">Step 03</span>
+            <strong className="block text-sm font-bold text-white mb-1">Confirm Schedule</strong>
+            <span className="text-xs text-sky-100/90 leading-relaxed block">
+              Reserve slots on our Tue–Sun year-round timetable.
+            </span>
+          </div>
+        </div>
+
+        {/* Action Button Group */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+          <button
+            type="button"
+            onClick={onOpenAssessment}
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-9 py-4.5 bg-[#0D9488] hover:bg-[#0f766e] text-white font-extrabold rounded-2xl text-base shadow-xl hover:shadow-2xl active:scale-[0.98] transition-all cursor-pointer"
+          >
+            <SwimIcon className="w-5 h-5" />
+            <span>Book Swimming Assessment</span>
+            <span className="text-teal-200">→</span>
+          </button>
+
+          <a
+            href="https://wa.me/971562444207?text=Hi%20ANSA%20Admissions%2C%20I%20would%20like%20to%20book%20a%20swimming%20assessment."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4.5 bg-white/95 hover:bg-white text-[#0A2540] font-extrabold rounded-2xl text-base shadow-lg hover:shadow-xl active:scale-[0.98] backdrop-blur-md transition-all"
+          >
+            <WhatsAppIcon className="w-5 h-5 text-[#25D366]" />
+            <span>Admissions WhatsApp (+971 56 244 4207)</span>
+          </a>
+        </div>
+
+        <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-sky-200 pt-3">
+          <div className="flex items-center gap-1.5">
+            <ClockIcon className="w-4 h-4 text-teal-300" />
+            <span>12 Months Year-Round Training</span>
+          </div>
+          <span>·</span>
+          <div className="flex items-center gap-1.5">
+            <CheckCircleIcon className="w-4 h-4 text-teal-300" />
+            <span>Regulated 28°C–30°C Water Temperature</span>
+          </div>
+        </div>
+
       </div>
     </section>
   );

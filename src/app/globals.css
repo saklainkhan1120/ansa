@@ -52,12 +52,24 @@
 /* Luxury Aquatic Shimmer & Glow Effects */
 @keyframes water-caustic {
   0%, 100% {
-    opacity: 0.4;
+    opacity: 0.35;
     transform: scale(1) translate(0, 0);
   }
   50% {
-    opacity: 0.7;
-    transform: scale(1.05) translate(4px, -6px);
+    opacity: 0.65;
+    transform: scale(1.04) translate(6px, -8px);
+  }
+}
+
+@keyframes caustic-drift {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 0%;
   }
 }
 
@@ -72,19 +84,34 @@
 }
 
 .animate-caustic {
-  animation: water-caustic 8s ease-in-out infinite;
+  animation: water-caustic 12s ease-in-out infinite;
+}
+
+.animate-caustic-drift {
+  background-size: 200% 200%;
+  animation: caustic-drift 20s ease infinite;
 }
 
 .animate-pulse-subtle {
   animation: pulse-subtle 4s ease-in-out infinite;
 }
 
+/* Reduced Motion Safety */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Glassmorphism Styles */
 .glass-aquatic {
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(224, 242, 254, 0.9);
+  border: 1px solid rgba(224, 242, 254, 0.85);
 }
 
 .glass-aquatic-dark {
@@ -92,6 +119,18 @@
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.glass-scrim {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.96) 0%,
+    rgba(255, 255, 255, 0.90) 45%,
+    rgba(255, 255, 255, 0.55) 70%,
+    rgba(255, 255, 255, 0.0) 100%
+  );
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 /* Mobile Touch Scroll Utilities */

@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { AwardIcon, ShieldCheckIcon, CheckCircleIcon, UsersIcon, StarIcon, SwimIcon } from "@/components/ui/icons";
-import { Badge } from "@/components/ui/badge";
 import { COACHES, LADY_COACHES, LEADERSHIP_COACHES } from "@/data/coaches";
 
 interface CoachingLegacyProps {
@@ -31,8 +30,10 @@ export function CoachingLegacy({ onOpenAssessment }: CoachingLegacyProps) {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-          <Badge variant="teal">Olympic-Grade Pedagogy</Badge>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0A2540] tracking-tight">
+          <span className="text-xs font-bold tracking-widest uppercase text-teal-800">
+            Olympic-Grade Pedagogy &amp; Faculty
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0A2540] tracking-tight">
             Coaching Faculty &amp; Mentorship
           </h2>
           <p className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed">
@@ -46,7 +47,7 @@ export function CoachingLegacy({ onOpenAssessment }: CoachingLegacyProps) {
               onClick={() => setActiveTab("all")}
               className={`px-4 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer ${
                 activeTab === "all"
-                  ? "bg-teal-600 text-white shadow-md shadow-teal-600/20"
+                  ? "bg-[#0D9488] text-white shadow-xs"
                   : "bg-slate-100 text-slate-700 hover:bg-slate-200"
               }`}
             >
@@ -57,7 +58,7 @@ export function CoachingLegacy({ onOpenAssessment }: CoachingLegacyProps) {
               onClick={() => setActiveTab("leadership")}
               className={`px-4 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer ${
                 activeTab === "leadership"
-                  ? "bg-teal-600 text-white shadow-md shadow-teal-600/20"
+                  ? "bg-[#0D9488] text-white shadow-xs"
                   : "bg-slate-100 text-slate-700 hover:bg-slate-200"
               }`}
             >
@@ -68,7 +69,7 @@ export function CoachingLegacy({ onOpenAssessment }: CoachingLegacyProps) {
               onClick={() => setActiveTab("lady_coaches")}
               className={`px-4 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer ${
                 activeTab === "lady_coaches"
-                  ? "bg-teal-600 text-white shadow-md shadow-teal-600/20"
+                  ? "bg-[#0D9488] text-white shadow-xs"
                   : "bg-slate-100 text-slate-700 hover:bg-slate-200"
               }`}
             >
@@ -79,7 +80,7 @@ export function CoachingLegacy({ onOpenAssessment }: CoachingLegacyProps) {
               onClick={() => setActiveTab("squad")}
               className={`px-4 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer ${
                 activeTab === "squad"
-                  ? "bg-teal-600 text-white shadow-md shadow-teal-600/20"
+                  ? "bg-[#0D9488] text-white shadow-xs"
                   : "bg-slate-100 text-slate-700 hover:bg-slate-200"
               }`}
             >

@@ -2,8 +2,6 @@
 
 import React, { useState } from "react";
 import { SwimIcon } from "@/components/ui/icons";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { PROGRAMMES } from "@/data/programmes";
 
 interface LevelFinderProps {
@@ -124,32 +122,34 @@ export function LevelFinder({ onSelectProgram }: LevelFinderProps) {
   };
 
   return (
-    <section id="level-finder" className="py-20 bg-[#EFFAFF] border-y border-sky-100">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="level-finder" className="py-20 lg:py-28 bg-[#F1FAFD] border-b border-sky-100/80">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
-          <Badge variant="teal">Interactive Programme Selector</Badge>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0A2540] tracking-tight">
-            Find the Right Starting Programme
+          <span className="text-xs font-bold tracking-widest uppercase text-teal-800">
+            Interactive Swimmer Assessment
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0A2540] tracking-tight">
+            Find the Optimal Starting Lane
           </h2>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-            Answer two quick questions to see which ANSA swimming pathway best matches your swimmer&apos;s current age and water comfort.
+            Answer two quick questions to see which ANSA developmental pathway best matches your swimmer&apos;s current age and water comfort.
           </p>
         </div>
 
-        <div className="bg-white border border-sky-100 rounded-3xl p-6 sm:p-10 shadow-xl shadow-sky-950/5 space-y-8">
+        <div className="bg-white/90 backdrop-blur-md border border-sky-200/80 rounded-3xl p-6 sm:p-10 shadow-xl shadow-sky-950/5 space-y-8">
           {/* STEP 1: SELECT AGE GROUP */}
           <div>
             <div className="flex items-center justify-between mb-4">
-              <span className="text-xs font-bold text-teal-800 uppercase tracking-wider">
+              <span className="text-xs font-bold text-teal-900 uppercase tracking-wider">
                 Step 1 of 2: Select Swimmer Age Group
               </span>
               {selectedAge && (
                 <button
                   type="button"
                   onClick={handleReset}
-                  className="text-xs font-semibold text-slate-500 hover:text-slate-900 underline"
+                  className="text-xs font-semibold text-slate-500 hover:text-[#0A2540] underline cursor-pointer"
                 >
-                  Reset
+                  Reset Answers
                 </button>
               )}
             </div>
@@ -165,10 +165,10 @@ export function LevelFinder({ onSelectProgram }: LevelFinderProps) {
                       setSelectedAge(group.key);
                       setSelectedOptionId(null);
                     }}
-                    className={`p-4 rounded-xl border text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 ${
+                    className={`p-4 rounded-2xl border text-left transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 ${
                       isSelected
-                        ? "bg-teal-600 text-white border-teal-600 shadow-md scale-[1.01]"
-                        : "bg-white text-slate-800 border-slate-200 hover:border-teal-400 hover:bg-teal-50/30"
+                        ? "bg-[#0D9488] text-white border-[#0D9488] shadow-md scale-[1.01]"
+                        : "bg-white text-slate-800 border-slate-200/90 hover:border-teal-400 hover:bg-sky-50/50"
                     }`}
                   >
                     <p className={`font-bold text-sm ${isSelected ? "text-white" : "text-slate-900"}`}>
@@ -185,9 +185,9 @@ export function LevelFinder({ onSelectProgram }: LevelFinderProps) {
 
           {/* STEP 2: SELECT CURRENT WATER COMFORT */}
           {selectedAge && (
-            <div className="animate-in fade-in slide-in-from-top-2 duration-200 pt-4 border-t border-slate-200">
+            <div className="animate-in fade-in slide-in-from-top-2 duration-300 pt-6 border-t border-slate-100">
               <div className="mb-4">
-                <span className="text-xs font-bold text-teal-800 uppercase tracking-wider">
+                <span className="text-xs font-bold text-teal-900 uppercase tracking-wider">
                   Step 2 of 2: Current Water Experience &amp; Goal
                 </span>
               </div>
@@ -200,26 +200,26 @@ export function LevelFinder({ onSelectProgram }: LevelFinderProps) {
                       key={opt.id}
                       type="button"
                       onClick={() => setSelectedOptionId(opt.id)}
-                      className={`w-full p-4 rounded-xl border text-left transition-all flex items-start gap-3.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 ${
+                      className={`w-full p-4.5 rounded-2xl border text-left transition-all flex items-start gap-3.5 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 ${
                         isSelected
-                          ? "bg-sky-50/90 border-teal-500 shadow-xs ring-1 ring-teal-500"
+                          ? "bg-sky-50/90 border-[#0D9488] shadow-xs ring-1 ring-[#0D9488]"
                           : "bg-white border-slate-200 hover:border-slate-300 hover:bg-slate-50/80"
                       }`}
                     >
                       <div
                         className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 mt-0.5 transition-colors ${
                           isSelected
-                            ? "border-teal-600 bg-teal-600 text-white"
+                            ? "border-[#0D9488] bg-[#0D9488] text-white"
                             : "border-slate-300 bg-white"
                         }`}
                       >
                         {isSelected && <div className="w-2 h-2 rounded-full bg-white" />}
                       </div>
                       <div>
-                        <p className="font-bold text-sm text-slate-900">
+                        <p className="font-bold text-sm text-[#0A2540]">
                           {opt.label}
                         </p>
-                        <p className="text-xs text-slate-600 mt-0.5">
+                        <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">
                           {opt.description}
                         </p>
                       </div>
@@ -232,42 +232,46 @@ export function LevelFinder({ onSelectProgram }: LevelFinderProps) {
 
           {/* RECOMMENDATION RESULT CARD */}
           {recommendedProg && selectedOption && (
-            <div className="animate-in fade-in zoom-in-95 duration-200 bg-white border-2 border-teal-500 rounded-2xl p-6 sm:p-8 shadow-md space-y-6">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-100">
+            <div className="animate-in fade-in zoom-in-95 duration-300 bg-[#F0F9FF] border border-sky-300 rounded-2xl p-6 sm:p-8 shadow-md space-y-6">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-sky-200/70">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center shrink-0 border border-teal-200">
+                  <div className="w-12 h-12 rounded-xl bg-teal-100 text-[#0D9488] flex items-center justify-center shrink-0 border border-teal-200">
                     <SwimIcon className="w-6 h-6" />
                   </div>
                   <div>
-                    <span className="text-xs font-bold text-teal-700 uppercase tracking-wider block">
-                      Suggested Starting Pathway
+                    <span className="text-xs font-bold text-teal-800 uppercase tracking-wider block">
+                      Recommended Initial Pathway
                     </span>
-                    <h3 className="text-2xl font-extrabold text-slate-900">
+                    <h3 className="text-2xl font-black text-[#0A2540]">
                       {recommendedProg.name}
                     </h3>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <Badge variant="teal">{recommendedProg.durationMinutes} Minutes</Badge>
-                  <Badge variant="verified">{recommendedProg.coachRatio}</Badge>
+                  <span className="text-xs font-bold bg-white text-[#0A2540] px-3 py-1 rounded-lg border border-sky-200 shadow-xs">
+                    {recommendedProg.durationMinutes} Minutes
+                  </span>
+                  <span className="text-xs font-bold bg-teal-600 text-white px-3 py-1 rounded-lg shadow-xs">
+                    Ratio {recommendedProg.coachRatio}
+                  </span>
                 </div>
               </div>
 
-              <div className="space-y-3">
-                <p className="text-sm font-semibold text-slate-900">
-                  Why this fits:
+              <div className="space-y-2">
+                <p className="text-xs font-bold uppercase tracking-wider text-[#0A2540]">
+                  Assessment Rationale:
                 </p>
-                <p className="text-sm text-slate-600 leading-relaxed bg-slate-50 p-3.5 rounded-xl border border-slate-200/80">
+                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed bg-white p-4 rounded-xl border border-sky-100">
                   {selectedOption.explanation}
                 </p>
               </div>
 
               {/* Conservative Explainability Disclaimer */}
-              <div className="p-3.5 bg-amber-50/80 border border-amber-200 rounded-xl text-xs text-amber-900 leading-relaxed flex items-start gap-2">
-                <span className="font-bold shrink-0">Note:</span>
+              <div className="p-3.5 bg-amber-50/90 border border-amber-200 rounded-xl text-xs text-amber-900 leading-relaxed flex items-start gap-2">
+                <span className="font-bold shrink-0">Official Note:</span>
                 <span>
-                  This suggestion is a preliminary starting guide. All final programme placements are confirmed by an ANSA coach during an in-water swimming assessment to ensure safety and ideal coach ratios.
+                  This recommendation is a preliminary guide. Final placement is confirmed by an ANSA coach during an in-water evaluation to guarantee absolute swimmer comfort and water safety.
                 </span>
               </div>
 
@@ -276,19 +280,20 @@ export function LevelFinder({ onSelectProgram }: LevelFinderProps) {
                 <button
                   type="button"
                   onClick={handleReset}
-                  className="text-xs font-semibold text-slate-600 hover:text-slate-900 py-2 px-3 text-center"
+                  className="text-xs font-bold text-slate-600 hover:text-[#0A2540] py-2 px-3 text-center cursor-pointer"
                 >
-                  ← Change Answers
+                  ← Modify Answers
                 </button>
 
                 <div className="flex flex-col sm:flex-row gap-2.5">
-                  <Button
-                    variant="primary"
-                    size="md"
+                  <button
+                    type="button"
                     onClick={() => onSelectProgram(recommendedProg.name)}
+                    className="px-6 py-3 bg-[#0D9488] hover:bg-[#0f766e] text-white text-xs font-extrabold rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer flex items-center justify-center gap-2"
                   >
-                    Enquire for {recommendedProg.name} →
-                  </Button>
+                    <span>Enquire for {recommendedProg.name}</span>
+                    <span>→</span>
+                  </button>
                 </div>
               </div>
             </div>
