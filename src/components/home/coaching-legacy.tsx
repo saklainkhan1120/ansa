@@ -186,7 +186,8 @@ export function CoachingLegacy({ onOpenAssessment }: CoachingLegacyProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             <div className="lg:col-span-7 space-y-3 text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-100 text-teal-900 text-xs font-bold uppercase tracking-wider">
+              <div className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-widest text-teal-800">
+                <span className="w-5 h-0.5 bg-teal-600" aria-hidden="true" />
                 <UsersIcon className="w-3.5 h-3.5 text-teal-700" />
                 <span>Cultural Comfort &amp; Gentle Supervision</span>
               </div>
@@ -273,7 +274,7 @@ export function CoachingLegacy({ onOpenAssessment }: CoachingLegacyProps) {
 
                     {/* Lady Coach Badge Overlay */}
                     {coach.isLadyCoach && (
-                      <div className="absolute top-2.5 right-2.5 bg-teal-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-xs flex items-center gap-1">
+                      <div className="absolute top-2.5 right-2.5 bg-teal-700 text-white text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 shadow-xs flex items-center gap-1">
                         <UsersIcon className="w-3 h-3" />
                         <span>Lady Coach</span>
                       </div>

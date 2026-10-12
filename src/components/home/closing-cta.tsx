@@ -40,10 +40,12 @@ export function ClosingCTA({ onOpenAssessment }: ClosingCTAProps) {
       {/* Content Container */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
         
-        {/* Overline Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/30 text-white text-xs font-bold tracking-widest uppercase">
+        {/* Editorial Overline — Pure Typography, No AI Pill Badge */}
+        <div className="flex items-center justify-center gap-2.5 text-xs font-extrabold tracking-widest uppercase text-teal-300">
+          <span className="w-6 h-px bg-teal-400/80" aria-hidden="true" />
           <SwimIcon className="w-4 h-4 text-teal-300" />
           <span>Begin Your Swimmer&apos;s Journey</span>
+          <span className="w-6 h-px bg-teal-400/80" aria-hidden="true" />
         </div>
 
         {/* Headline */}

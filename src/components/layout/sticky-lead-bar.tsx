@@ -17,10 +17,6 @@ export function StickyLeadBar({ onOpenAssessment }: StickyLeadBarProps) {
         className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-3 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-xl text-xs font-bold shadow-xs active:scale-[0.97] transition-all"
         aria-label="Chat with ANSA Admissions on WhatsApp"
       >
-        <span className="relative flex h-2 w-2">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-white" />
-        </span>
         <WhatsAppIcon className="w-4 h-4 shrink-0" />
         <span>WhatsApp</span>
       </a>

@@ -21,13 +21,15 @@ export function ReviewsSection() {
             </p>
           </div>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 border border-sky-200 text-sky-900 text-xs font-bold self-start md:self-auto">
+          <div className="flex items-center gap-3 text-xs font-bold text-slate-700 self-start md:self-auto border-l-2 border-teal-500 pl-3">
             <span className="flex items-center gap-1 text-amber-500">
               {[...Array(5)].map((_, i) => (
                 <StarIcon key={i} className="w-3.5 h-3.5 fill-amber-400" />
               ))}
             </span>
-            <span>100% Attributable Parent Reviews</span>
+            <span className="uppercase tracking-wider font-extrabold text-[#0A2540] text-[11px]">
+              Verified Parent Reviews
+            </span>
           </div>
         </div>
 
@@ -46,7 +48,7 @@ export function ReviewsSection() {
                       <StarIcon key={i} className="w-4 h-4 fill-amber-400" />
                     ))}
                   </div>
-                  <span className="text-[11px] font-semibold text-slate-500 bg-white border border-slate-200/80 px-2 py-0.5 rounded-md">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 bg-white border border-slate-200/80 px-2 py-0.5">
                     {review.source}
                   </span>
                 </div>

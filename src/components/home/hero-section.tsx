@@ -18,16 +18,29 @@ export function HeroSection({ onOpenAssessment }: HeroSectionProps) {
 
   return (
     <section className="relative w-full min-h-[85svh] lg:min-h-[92svh] flex items-center overflow-hidden bg-[#0A2540]">
-      {/* 1. Full-Bleed Edge-to-Edge Authentic Swimming Photography */}
+      {/* 1. Full-Bleed Edge-to-Edge Authentic Swimming Video & Photography Fallback */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/hero/hero-banner.jpg"
-          alt="Swimmer training in crystal-clear Olympic competition swimming pool at Aqua Nation Sports Academy"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-[65%_center] sm:object-[60%_center] lg:object-center transform scale-[1.02] transition-transform duration-1000 ease-out"
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/videos/hero-swim-poster.jpg"
+          className="absolute inset-0 w-full h-full object-cover object-[70%_center] sm:object-[65%_center] lg:object-center transform scale-[1.02]"
+        >
+          <source src="/videos/hero-swim.mp4" type="video/mp4" />
+          <source src="/videos/hero-swim.webm" type="video/webm" />
+          {/* Fallback Image */}
+          <Image
+            src="/images/hero/hero-banner.jpg"
+            alt="Swimmer training in crystal-clear Olympic competition swimming pool at Aqua Nation Sports Academy"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[65%_center] sm:object-[60%_center] lg:object-center"
+          />
+        </video>
 
         {/* 2. Refined Aquatic Caustic Light Layer (Sunlight pool refraction) */}
         <div 
@@ -65,14 +78,15 @@ export function HeroSection({ onOpenAssessment }: HeroSectionProps) {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
         <div className="max-w-2xl lg:max-w-3xl space-y-6 sm:space-y-7 text-left">
           
-          {/* Institutional Concept Overline */}
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-sky-200/80 shadow-xs text-xs font-bold tracking-widest uppercase text-[#0A2540]">
-            <span className="flex h-2 w-2 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-600" />
+          {/* Institutional Concept Overline — Pure Editorial Typography, No AI Pill Badge */}
+          <div className="flex items-center gap-3 text-xs font-extrabold tracking-widest uppercase text-teal-800">
+            <span className="w-8 h-0.5 bg-gradient-to-r from-teal-600 to-sky-500" aria-hidden="true" />
+            <span className="flex items-center gap-1.5 text-[#0A2540]">
+              <AwardIcon className="w-4 h-4 text-amber-600 shrink-0" />
+              <span>The Art of Swimming</span>
             </span>
-            <AwardIcon className="w-3.5 h-3.5 text-amber-600 shrink-0" />
-            <span className="truncate">The Art of Swimming · The Pursuit of Excellence</span>
+            <span className="text-slate-400 font-normal">/</span>
+            <span className="text-teal-700">The Pursuit of Excellence</span>
           </div>
 
           {/* Cinematic Editorial Headline */}
@@ -132,7 +146,7 @@ export function HeroSection({ onOpenAssessment }: HeroSectionProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between text-xs text-slate-700">
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="w-1.5 h-1.5 bg-emerald-600 shrink-0" aria-hidden="true" />
               <strong className="text-[#0A2540]">28°C–30°C</strong>
               <span className="text-slate-500">Year-Round Temperature Control</span>
             </div>

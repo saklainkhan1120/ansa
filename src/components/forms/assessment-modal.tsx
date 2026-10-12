@@ -109,7 +109,7 @@ export function AssessmentModal({
               </p>
               <div className="bg-sky-50 border border-sky-200 rounded-xl p-4 text-xs text-sky-900 text-left space-y-2">
                 <p className="font-semibold text-sky-950 flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366] shrink-0" />
                   Instant Admissions WhatsApp Fast-Track:
                 </p>
                 <p>

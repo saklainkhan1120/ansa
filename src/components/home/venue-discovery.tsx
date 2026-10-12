@@ -101,7 +101,7 @@ export function VenueDiscovery({ onOpenAssessmentForLocation }: VenueDiscoveryPr
                 </div>
 
                 <div className="absolute top-4 right-4 bg-[#0A2540]/90 backdrop-blur-md text-emerald-300 text-xs font-bold px-3 py-1 rounded-lg border border-emerald-500/30 flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="w-1.5 h-1.5 bg-emerald-400 shrink-0" aria-hidden="true" />
                   <span>28°C–30°C Chilled/Heated</span>
                 </div>
 

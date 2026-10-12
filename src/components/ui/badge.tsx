@@ -14,7 +14,7 @@ export function Badge({
   children,
   ...props
 }: BadgeProps) {
-  const baseStyles = "inline-flex items-center gap-1.5 font-medium rounded-full border transition-colors";
+  const baseStyles = "inline-flex items-center gap-1.5 font-semibold rounded-md border transition-colors";
   
   const sizeStyles = {
     sm: "text-xs px-2.5 py-0.5",
