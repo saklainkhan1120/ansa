@@ -49,7 +49,7 @@ export function HomeClient() {
       <VenueDiscovery onOpenAssessmentForLocation={(loc) => handleOpenAssessment(undefined, loc)} />
 
       {/* 6. Coaching Legacy & Olympic Mentorship */}
-      <CoachingLegacy />
+      <CoachingLegacy onOpenAssessment={() => handleOpenAssessment()} />
 
       {/* 7. Champion Athletes & High-Performance Hall */}
       <ChampionsSection />
